@@ -1,0 +1,100 @@
+*{
+    margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: 'Playfair Display', serif;
+
+}
+
+section{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    
+    background: url(./img/hospital.jpg)no-repeat;
+    background-size: cover;
+    background-position: center;
+    
+}
+part1{
+    text-align: center;
+    
+    display: flex;
+}
+ #name, #experience, #job{
+    font-size: 1.2rem;
+    border-radius: 3px;
+    width: 15rem;
+}
+#btn, #clean {
+    
+    border-radius: 10px;
+    background-color: #FAF3F3;
+}
+
+part1,  h1{
+
+padding: 3%;
+color: black;
+text-align: center;
+justify-content: center;
+}
+
+part1, #form{
+    text-align: center;
+}
+input {
+    text-align: center;
+    padding: 10px;
+}
+
+
+
+table{
+    width: 1rem;
+    border: 2px solid black;
+    border-collapse: collapse ;
+    align-content: center;
+    margin: auto;
+}
+thead{
+    background-color: #90AACB;
+}
+
+#data-employes{
+    background-color: #90AACB; 
+    text-align: center;
+}
+
+
+
+ td{
+    background-color: #FAF3F3;
+   border :1px solid black;
+   padding: .5rem;
+   text-align: center;
+   font-size: 1rem;
+    
+}
+.editar{
+    background-color: wheat;
+    color: blue;
+}
+/*span {
+    
+    
+    display: block;
+    text-align: center;
+    font-size: 1em;
+    color: black;
+    font-weight: 700;
+    
+   
+
+}*/
+#msj {
+    text-align: center;
+    padding: 10px;
+    border: 10px solid black;
+}
+ 

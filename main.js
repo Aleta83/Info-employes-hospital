@@ -1,10 +1,24 @@
+var row = null;//variable global
+
 function Submit(){    
     let dataEntered = retrievData();
     let readData = readingDataFromLocalStore(dataEntered);
-    insert(readData);
-}   
+    if (dataEntered == false){ //validar 
+        msg.innerHTML =  "Por favor inserta la informacion"  // '<span class="insertado"> Por favor introduce la informacion completa</span>';
+    }else {
+        if(row == null){
+            insert(readData);
+            msg.innerHTML = "Informacion insertada"//'<span class="insertado"> Informacion Insertada! </span>' ;
+            
+        }else{
+            update();
+            msg.innerHTML = "informacion updateada"//'<span class="insertado">Informacion actualizada 🙂 </span>' ;
+        }
+    }
+  document.getElementById("form") .reset();
+}
 
-//CREATE crear
+//CREATE
 
 function retrievData(){ // crear
     let name1= document.getElementById("name").value; 
@@ -12,14 +26,17 @@ function retrievData(){ // crear
     let exp= document.getElementById("experience").value;
 
     let arr = [name1, job, exp];
-    
+    if (arr.includes("")){
+        return false;
+    }else{
         return arr;
+    }
      
 
 
 }
- //datos en  local storage
-function readingDataFromLocalStore(dataEntered){ 
+ 
+function readingDataFromLocalStore(dataEntered){ //datos en  local storage
     let n= localStorage.setItem("Nombre",dataEntered[0]);
     let j= localStorage.setItem("Job",dataEntered[1]);
     let e= localStorage.setItem("Experiencia",dataEntered[2]);
@@ -71,7 +88,16 @@ function update(){
 }
 
 //delete
-
+function remove(td){
+    let ans = confirm("Estas seguro de querer borrar los datos?")
+    if (ans == true){
+       
+        row = td.parentElement.parentElement;
+        document.getElementById("table").deleteRow(row.rowIndex);
+        msg.innerHTML = "informacion Borrada"
+    }
+    
+}
 
 
 
