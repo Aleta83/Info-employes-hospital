@@ -1,54 +1,51 @@
-var row = null;//variable global
+var row = null;       //variable global
 
 function Submit(){    
     let dataEntered = retrievData();
     let readData = readingDataFromLocalStore(dataEntered);
-    if (dataEntered == false){ //validar 
-        msg.innerHTML =  "Por favor inserta la informacion"  // '<span class="insertado"> Por favor introduce la informacion completa</span>';
+    if (dataEntered == false){             //validar 
+        msg.innerHTML =  '<span class="insertado"> Por favor introduce la informacion completa</span>';
     }else {
         if(row == null){
             insert(readData);
-            msg.innerHTML = "Informacion insertada"//'<span class="insertado"> Informacion Insertada! </span>' ;
+            msg.innerHTML = '<span class="insertado"> Informacion Insertada! </span>' ;
             
         }else{
             update();
-            msg.innerHTML = "informacion updateada"//'<span class="insertado">Informacion actualizada 🙂 </span>' ;
+            msg.innerHTML = '<span class="insertado">Informacion actualizada 🙂 </span>' ;
         }
     }
-  document.getElementById("form") .reset();
+  document.getElementById("form").reset();
 }
 
 //CREATE
 
-function retrievData(){ // crear
+function retrievData(){     // crear
     let name1= document.getElementById("name").value; 
     let job= document.getElementById("job").value;
-    let exp= document.getElementById("experience").value;
+    let exp= document.getElementById("area").value;
 
-    let arr = [name1, job, exp];
+    var arr = [name1, job, exp];
     if (arr.includes("")){
         return false;
     }else{
         return arr;
     }
-     
-
-
 }
  
-function readingDataFromLocalStore(dataEntered){ //datos en  local storage
-    let n= localStorage.setItem("Nombre",dataEntered[0]);
-    let j= localStorage.setItem("Job",dataEntered[1]);
-    let e= localStorage.setItem("Experiencia",dataEntered[2]);
+function readingDataFromLocalStore(dataEntered){        //datos en  local storage
+    var n= localStorage.setItem("Nombre", dataEntered[0]);
+    var j= localStorage.setItem("Puesto", dataEntered[1]);
+    var e= localStorage.setItem("Area de trabajo",dataEntered[2]);
 
     
-    let n1 = localStorage.getItem("Nombre", n);
-    let j1 = localStorage.getItem("Job", j);
-    let e1 = localStorage.getItem("Experiencia", e);
+    var n1 = localStorage.getItem("Nombre", n);
+    var j1 = localStorage.getItem("Puesto", j);
+    var e1 = localStorage.getItem("Area de trabajo", e);
    
 
     
-    let arr = [n1, j1, e1];
+    var arr = [n1, j1, e1];
     return arr;
  
 }
@@ -60,7 +57,7 @@ function insert(readData){
     row.insertCell(1).innerHTML = readData[1];
     row.insertCell(2).innerHTML = readData[2];
     row.insertCell(3).innerHTML = `<button class="editar" onclick = edit(this)>Editar</button>
-                                <button onclick = remove(this)>Borrar</button>`;
+                                <button class="delete" onclick = remove(this)>Borrar</button>`;
 
 
     /* esta es otra forma 
@@ -74,7 +71,7 @@ function edit(td){
     row = td.parentElement.parentElement;
     document.getElementById("name").value = row.cells[0].innerHTML;
     document.getElementById("job").value = row.cells[1].innerHTML;
-    document.getElementById("experience").value = row.cells[2].innerHTML
+    document.getElementById("area").value = row.cells[2].innerHTML
 
 
 }
@@ -83,7 +80,7 @@ function edit(td){
 function update(){
     row.cells[0].innerHTML = document.getElementById("name").value;
     row.cells[1].innerHTML = document.getElementById("job").value;
-    row.cells[2].innerHTML = document.getElementById("experience").value;
+    row.cells[2].innerHTML = document.getElementById("area").value;
     row = null;
 }
 
@@ -94,10 +91,10 @@ function remove(td){
        
         row = td.parentElement.parentElement;
         document.getElementById("table").deleteRow(row.rowIndex);
-        msg.innerHTML = "informacion Borrada"
+        msg.innerHTML = '<p>Informacion Eliminada</p>'
     }
     
 }
 
 
-
+it 

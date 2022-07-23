@@ -6,41 +6,69 @@
 
 }
 
-section{
+section {
     position: relative;
     width: 100%;
     min-height: 100vh;
-    
     background: url(./img/hospital.jpg)no-repeat;
     background-size: cover;
-    background-position: center;
-    
-}
-part1{
-    text-align: center;
-    
+    background-position: center;  
+    flex-direction: column;  
     display: flex;
 }
- #name, #experience, #job{
-    font-size: 1.2rem;
+
+section:before{
+    content: "";
+    width: 100%;
+    height: 100vh;
+    background-color: #90AACB;
+    position: absolute;
+    opacity: 0.4;
+}
+h1{
+    
+    margin-top: 2%;
+
+}
+
+section, .part1, table, span, p, .h1{
+    position: relative;
+}
+
+ #name, #area, #job{
+    font-size: 1rem;
     border-radius: 3px;
     width: 15rem;
 }
-#btn, #clean {
+#btn  {
     
+    background-color: #4CAF50; 
     border-radius: 10px;
-    background-color: #FAF3F3;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1rem;
+    width: 100px;
+}
+#clean{
+    background-color: #555555; 
+    border-radius: 10px;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1rem;
+    width: 100px;
 }
 
-part1,  h1{
 
-padding: 3%;
-color: black;
-text-align: center;
-justify-content: center;
-}
-
-part1, #form{
+.part1, #form{
+    margin-top: 2%;
     text-align: center;
 }
 input {
@@ -51,18 +79,21 @@ input {
 
 
 table{
-    width: 1rem;
+    width: 70%;
     border: 2px solid black;
     border-collapse: collapse ;
     align-content: center;
     margin: auto;
+}
+.col {
+    width: 25%;
 }
 thead{
     background-color: #90AACB;
 }
 
 #data-employes{
-    background-color: #90AACB; 
+    background-color: #D0E8F2; 
     text-align: center;
 }
 
@@ -76,25 +107,78 @@ thead{
    font-size: 1rem;
     
 }
-.editar{
-    background-color: wheat;
-    color: blue;
+.delete{
+    background-color: #f44336; 
+    border-radius: 4px;
+    border: none;
+    color: white;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 10px;
+    margin-top: 5px;
+    -webkit-transition-duration: 0.4s; 
+    transition-duration: 0.4s;  
 }
-/*span {
-    
-    
-    display: block;
+
+.delete:hover{
+    background-color: #FA6E4F; 
+    color: white;
+}
+
+.editar{
+    background-color:  #008CBA ; 
+    border-radius: 4px;
+    border: none;
+    color: white;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 10px;
+    -webkit-transition-duration: 0.4s; 
+    transition-duration: 0.4s;
+}
+.editar:hover{
+    background-color: #90AACB; 
+    color: white;
+}
+
+
+
+span {
+    padding: 10px;
+     display: block;
     text-align: center;
     font-size: 1em;
     color: black;
     font-weight: 700;
+}
+
+p{
+    font-size: 1rem;
+    
+    text-align: center;
+    color: red;
+    padding: 10px;
+
+}
+
+
+
+@media screen and (max-width: 300px) {
+    
+    table {
+        width:100%;
+        
+    }
+    td, .col, #name, #area, #job{
+        font-size: 8px;
+    }
+    
+    
+    
     
    
-
-}*/
-#msj {
-    text-align: center;
-    padding: 10px;
-    border: 10px solid black;
 }
- 
